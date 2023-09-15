@@ -1,15 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import DoggiesApp from './DoggiesApp'
+import DoggiesShelterApp from './DoggiesShelterApp';
 
-import './styles.css'
+import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <DoggiesApp />
-    </BrowserRouter>
+    <DoggiesShelterApp />
   </React.StrictMode>,
 )

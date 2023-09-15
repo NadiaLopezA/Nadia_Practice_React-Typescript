@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { CardLogin, HeaderLogin, NavbarLogin } from "../components";
+import { CardLogin, HeaderLogin, NavbarLogin } from "../";
 
 
 export const LoginPage = () => {
@@ -17,7 +17,7 @@ export const LoginPage = () => {
                 <HeaderLogin />
                 <div className="container mx-auto px-4">
                     <div className="justify-between items-center flex flex-wrap -mx-4">
-                        <div className="mx-auto px-4 relative w-full lg:w-5/12 -mt-72">
+                        <div className="mx-auto px-4 relative w-full lg:w-5/12 -mt-56 md:-mt-72 xl:-mt-72">
                             <CardLogin />
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Skew } from "./";
+import { Skew } from '../';
 
 export const HeaderLogin = () => {
   return (
@@ -8,7 +8,7 @@ export const HeaderLogin = () => {
         <div
           className="bg-blueGray-800 w-full h-full absolute bg-cover bg-50 z-0 opacity-20"
           style={{
-            backgroundImage: "url('../assets/img/login/loginBackImage.jpg')",
+            backgroundImage: "url('../assets/img/login/backgroundImage.png')",
           }}
         ></div>
         <div className="w-full bottom-0 absolute h-42 z-2">

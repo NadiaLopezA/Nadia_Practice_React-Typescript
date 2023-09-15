@@ -1,18 +1,15 @@
 import React from 'react';
+import { useAuthStore } from '../../hooks';
 
 import {
     Navbar,
-    MobileNav,
+    
     Typography,
     IconButton,
     List,
     ListItem,
-    ListItemPrefix
+    Collapse
 } from '@material-tailwind/react';
-
-import {
-    PowerIcon,
-} from "@heroicons/react/24/solid";
 
 
 
@@ -26,25 +23,26 @@ export const NavbarLogin = () => {
         );
     }, []);
 
+    const { startLogout } = useAuthStore();
+
     const navList = (
         <List className=" h-6 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <ListItem className="">
-                <ListItemPrefix>
-                    <PowerIcon className="h-5 w-5 text-red-700" />
-                </ListItemPrefix>
-                Log Out
+                <button type="button"  onClick={startLogout} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Log Out
+                </button>
             </ListItem>
         </List>
     );
     return (
-        <Navbar className="h-12 mx-auto w-full py-2 px-2 lg:px-8 lg:py-4 mb-0">
+        <Navbar className="mx-auto w-full py-2 px-4 lg:px-8 lg:py-4 mb-0 bg-gray-100">
             <div className="container h-3 mx-auto flex items-center justify-between text-black">
                 <Typography
                     as="a"
                     href="#"
                     className="mr-4 cursor-pointer py-1.5 font-medium"
                 >
-                    Material Tailwind
+                    Fetch
                 </Typography>
                 <div className="hidden lg:block">{navList}</div>
                 <IconButton
@@ -85,11 +83,11 @@ export const NavbarLogin = () => {
                     )}
                 </IconButton>
             </div>
-            <MobileNav open={openNav}>
+            <Collapse  open={openNav}>
                 <div className="container mx-auto">
                     {navList}
                 </div>
-            </MobileNav>
+            </Collapse>
         </Navbar>
     );
 }
